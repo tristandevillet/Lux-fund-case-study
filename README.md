@@ -28,3 +28,12 @@ Ce repo est un cas d'étude pratique construit en parallèle de mes études de c
 - **Acteurs simulés** : TA (Transfer Agent), depositary, ManCo (Management Company) fictifs
 
 Fund Alpha sert de fil rouge pour : NAV, comptabilité spécifique fonds, réconciliations, FX.
+## NAV Calculator — Fund Alpha
+
+Calculateur de NAV (Net Asset Value) construit en Excel, dans `nav/fund_alpha_nav_calculator.xlsx` :
+- **Assets** : positions actions (ASML, LVMH, Microsoft), cash, receivable, accrued income, position fund-of-funds
+- **Liabilities** : payables, accrued fees (frais de gestion calculés au prorata journalier, frais de performance, frais courus fund-of-funds)
+- **Fund-of-Funds** : détail de 3 sous-fonds UCITS détenus par Fund Alpha (obligations, actions US, actions émergentes), avec frais en cascade
+- **NAV Calculation** : calcul final Net Asset Value ÷ nombre de parts
+
+Résultat obtenu : NAV per share = 129,58 €, reflétant à la fois les positions directes et l'exposition fund-of-funds avec ses frais en cascade.
