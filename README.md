@@ -40,7 +40,7 @@ Résultat obtenu : NAV per share = 129,58 €, reflétant à la fois les positio
 
 ## Comptabilité spécifique fonds & NAV Tie-Out — Fund Alpha
 
-Journal des transactions et processus de rapprochement construits dans `ledger/`, illustrant le cycle comptable quotidien d'un fonds :
+Journal des transactions et processus de rapprochement construits dans `nav/fund_alpha_nav_calculator.xlsx` (onglets Transaction Journal et Trial Balance), illustrant le cycle comptable quotidien d'un fonds :
 
 - **Transaction Journal** : 5 écritures représentatives (souscription, dividende reçu, accrual de frais de gestion, accrual d'intérêts obligataires, paiement de facture dépositaire), chacune avec sa logique débit/crédit
 - **Trial Balance** : agrégation des mouvements par compte via SUMIF, avec vérification d'équilibre (somme des soldes nets = 0)
