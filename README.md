@@ -37,3 +37,13 @@ Calculateur de NAV (Net Asset Value) construit en Excel, dans `nav/fund_alpha_na
 - **NAV Calculation** : calcul final Net Asset Value ÷ nombre de parts
 
 Résultat obtenu : NAV per share = 129,58 €, reflétant à la fois les positions directes et l'exposition fund-of-funds avec ses frais en cascade.
+
+## Comptabilité spécifique fonds & NAV Tie-Out — Fund Alpha
+
+Journal des transactions et processus de rapprochement construits dans `ledger/`, illustrant le cycle comptable quotidien d'un fonds :
+
+- **Transaction Journal** : 5 écritures représentatives (souscription, dividende reçu, accrual de frais de gestion, accrual d'intérêts obligataires, paiement de facture dépositaire), chacune avec sa logique débit/crédit
+- **Trial Balance** : agrégation des mouvements par compte via SUMIF, avec vérification d'équilibre (somme des soldes nets = 0)
+- **NAV Tie-Out** : comparaison entre la NAV opérationnelle (Assets/Liabilities) et les mouvements comptables du jour — un écart de 48 300 € a été détecté sur le compte Cash (photo figée vs mouvements réels), puis corrigé méthodiquement compte par compte
+
+Résultat après tie-out : NAV per share = 129,75 €, contre 129,58 € avant intégration des transactions du jour.
