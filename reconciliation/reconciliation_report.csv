@@ -1,0 +1,4 @@
+Bank Description;Journal Description;Amount;Bank Date;Journal Date;Date Difference (days);Similarity (%);Status
+Investor subscription received;Investor subscription;50000.0;2026-09-08;2026-09-08;0;82;Matched
+ASML dividend received;ASML dividend received;800.0;2026-09-08;2026-09-08;0;100;Matched
+Depositary fee payment;Depositary fee payment;-2500.0;2026-09-09;2026-09-08;1;100;Matched
