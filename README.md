@@ -48,3 +48,14 @@ Transaction journal and reconciliation process built in `nav/fund_alpha_nav_calc
 - **NAV Tie-Out**: comparison between the operational NAV (Assets/Liabilities) and the day's accounting movements — a 48,300 € discrepancy was detected on the Cash account (stale snapshot vs. actual movements), then corrected methodically account by account
 
 Result after tie-out: NAV per share = 129.75 €, up from 129.58 € before integrating the day's transactions.
+
+## Reconciliation Engine — Fund Alpha (Python, fuzzy matching)
+
+Bank reconciliation module built in `reconciliation/`, comparing the fund's internal accounting records against an independent custodian bank statement:
+
+- **transaction_journal_cash.csv**: cash movements extracted from the accounting ledger (subscription, dividend, depositary fee payment)
+- **bank_statement.csv**: independent custodian view of the same cash movements, with a realistic 1-day timing discrepancy on the depositary payment
+- **reconciliation_engine.py**: Python script (pandas, fuzzywuzzy) matching transactions on exact amount, a ±2-day date tolerance, and description similarity scoring — rather than requiring an exact match on every field
+- **reconciliation_report.csv**: exported output documenting each match, the date discrepancy found, and the similarity score
+
+Result: all 3 transactions successfully matched, correctly identifying and tolerating the 1-day timing gap on the depositary payment — illustrating how reconciliation distinguishes normal processing delays from genuine accounting breaks.
