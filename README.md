@@ -35,7 +35,7 @@ Fund Alpha serves as the foundation for: NAV, fund-specific accounting, reconcil
 
 ## NAV Calculator — Fund Alpha
 
-NAV calculator built in Excel, in [nav/fund_alpha_nav_calculator.xlsx](nav/fund_alpha_nav_calculator.xlsx)::
+NAV calculator built in Excel, in [nav/fund_alpha_nav_calculator.xlsx](nav/fund_alpha_nav_calculator.xlsx):
 - **Assets**: equity positions (ASML, LVMH, Microsoft), cash, receivable, accrued income, fund-of-funds position
 - **Liabilities**: payables, accrued fees (management fees calculated on a daily pro-rata basis, performance fees, fund-of-funds accrued fees)
 - **Fund-of-Funds**: detail of 3 UCITS sub-funds held by Fund Alpha (bonds, US equities, emerging market equities), with cascading fees
