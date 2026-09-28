@@ -64,6 +64,26 @@ Bank reconciliation module built in `reconciliation/`, comparing the fund's inte
 
 Result: all 3 transactions successfully matched, correctly identifying and tolerating the 1-day timing gap on the depositary payment — illustrating how reconciliation distinguishes normal processing delays from genuine accounting breaks.
 
+## Fund Beta
+
+- **Legal structure**: RAIF (Reserved Alternative Investment Fund)
+- **Strategy**: Private Equity, with a Real Estate sleeve
+- **Base currency**: EUR
+- **Structure**: closed-ended (commitments, capital calls, no free redemptions)
+- **Total Commitments**: €50,000,000 (3 LPs)
+- **Waterfall**: European style (deal-by-deal), 8% hurdle rate, 100% GP catch-up, 80/20 carried interest split
+- **Simulated actors**: fictional AIFM (Alternative Investment Fund Manager), depositary
+
+## PE Waterfall — Fund Beta (European style, deal-by-deal)
+
+European-style PE waterfall built in Excel, in [beta/fund_beta_waterfall.xlsx](beta/fund_beta_waterfall.xlsx), applied to a first realistic deal:
+
+- **Deal**: MedTech Solutions SA — €8,000,000 invested, held 4 years, exited at €16,500,000 (≈2.06x MOIC)
+- **4-stage waterfall**: Return of Capital → Preferred Return (8%/year, compounded) → GP Catch-Up (100% GP, until 20% of cumulative profit is reached) → Carried Interest (80/20 split)
+- **Verification**: total distributed reconciles exactly to €16,500,000, with the GP receiving precisely 20% of total profit (€1,700,000 of €8,500,000) — confirming the catch-up mechanism correctly rebalances the split despite the LP receiving 100% of capital and preferred return first
+
+Result: LP receives €14,800,000 total, GP receives €1,700,000 total (catch-up + carried interest).
+
 ## Additional Excel Practice
 
 Separate from the Fund Alpha/Beta case study, a supplementary exercise practicing advanced Excel techniques — [excel-skills/exos_formules.xlsx](excel-skills/exos_formules.xlsx): XLOOKUP, VLOOKUP (with IFERROR), SUMIFS, Pivot Tables, and Power Query (merge queries, calculated columns, filtering) — applied to a generic transaction-matching scenario with intentional test cases (a genuine amount break, an unmatched transaction).
